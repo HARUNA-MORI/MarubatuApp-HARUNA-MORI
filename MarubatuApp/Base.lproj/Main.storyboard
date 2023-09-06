@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,6 +57,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ez-nQ-t2q">
+                                <rect key="frame" x="103" y="265" width="191" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="問題を作成する">
+                                    <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="large"/>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="fxI-1O-Oe9" kind="push" id="BW0-eC-Tp1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,10 +94,133 @@
             </objects>
             <point key="canvasLocation" x="-25.190839694656489" y="3.5211267605633805"/>
         </scene>
+        <!--View Conto-->
+        <scene sceneID="eQg-vd-MVe">
+            <objects>
+                <viewController title="View Conto" id="fxI-1O-Oe9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aHR-v5-6hz" customClass="QuestionTableViewController.swift">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="967-mz-php">
+                                <rect key="frame" x="121.66666666666669" y="245" width="150" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="YxW-EO-xYn"/>
+                                    <constraint firstAttribute="height" constant="50" id="msD-RG-fhP"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="✖️"/>
+                                    <segment title="◯"/>
+                                </segments>
+                                <connections>
+                                    <action selector="marubatuButton:" destination="7iL-EC-svT" eventType="valueChanged" id="wg3-TD-5Ks"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYB-wn-xHK">
+                                <rect key="frame" x="20" y="145" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Si5-xW-LIU"/>
+                                    <constraint firstAttribute="height" constant="50" id="dnG-4U-6bF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSZ-pW-w69">
+                                <rect key="frame" x="123.66666666666669" y="395" width="146" height="50"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="5kC-gE-qKM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="問題を保存する"/>
+                                <connections>
+                                    <action selector="qqq:" destination="7iL-EC-svT" eventType="touchUpInside" id="MLY-ga-qgc"/>
+                                    <action selector="saveButton:" destination="7iL-EC-svT" eventType="touchUpInside" id="oXb-9H-cYC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zig-Zu-hBj">
+                                <rect key="frame" x="121.66666666666669" y="70" width="150" height="34.333333333333343"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="TNB-LF-2VD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="TOPに戻る"/>
+                                <connections>
+                                    <action selector="moveTOP:" destination="7iL-EC-svT" eventType="touchUpInside" id="gQT-Ku-Jes"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZg-k2-FSd">
+                                <rect key="frame" x="125" y="494" width="146" height="50"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="VrX-pz-eHH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="全問題削除">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clearButton:" destination="7iL-EC-svT" eventType="touchUpInside" id="Toc-na-cfL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qwn-MN-gsO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="967-mz-php" firstAttribute="top" secondItem="qwn-MN-gsO" secondAttribute="top" constant="245" id="Gd0-Yg-DxF"/>
+                            <constraint firstItem="hSZ-pW-w69" firstAttribute="top" secondItem="967-mz-php" secondAttribute="bottom" constant="100" id="H67-a6-PfA"/>
+                            <constraint firstItem="PYB-wn-xHK" firstAttribute="leading" secondItem="qwn-MN-gsO" secondAttribute="leading" constant="20" id="HC7-dE-Ihy"/>
+                            <constraint firstItem="Zig-Zu-hBj" firstAttribute="top" secondItem="qwn-MN-gsO" secondAttribute="top" constant="70" id="Ikw-Bg-pNI"/>
+                            <constraint firstItem="PYB-wn-xHK" firstAttribute="top" secondItem="qwn-MN-gsO" secondAttribute="top" constant="145" id="Jxw-8B-I7Y"/>
+                            <constraint firstItem="Zig-Zu-hBj" firstAttribute="centerX" secondItem="aHR-v5-6hz" secondAttribute="centerX" id="TYl-uo-gMJ"/>
+                            <constraint firstItem="967-mz-php" firstAttribute="centerX" secondItem="aHR-v5-6hz" secondAttribute="centerX" id="XNJ-wh-yDg"/>
+                            <constraint firstItem="hSZ-pW-w69" firstAttribute="centerX" secondItem="aHR-v5-6hz" secondAttribute="centerX" id="YIM-c3-9he"/>
+                            <constraint firstItem="qwn-MN-gsO" firstAttribute="trailing" secondItem="PYB-wn-xHK" secondAttribute="trailing" constant="20" id="m95-1c-u1d"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="q" destination="PYB-wn-xHK" id="Gb0-gx-oxz"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y0g-vf-f1D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Snp-fU-yB0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="7iL-EC-svT" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1715.2671755725189" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hiE-xA-Zpu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i40-h5-XdM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Y2W-lj-Imf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zrS-Vs-9WU">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fxI-1O-Oe9" kind="relationship" relationship="rootViewController" id="4DB-ct-8Ex"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6h1-eL-tHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788.54961832061065" y="3.5211267605633805"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BW0-eC-Tp1"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
